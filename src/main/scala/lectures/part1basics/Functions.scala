@@ -24,7 +24,7 @@ object Functions extends App {
 
   aFunctionWithSideEffects("hi")
 
-  def aBigFuntion(n: Int): Int = {
+  def aBigFunction(n: Int): Int = {
     def aSmallerFunction(a: Int, b: Int): Int = a + b
 
     aSmallerFunction(n, n - 1)
