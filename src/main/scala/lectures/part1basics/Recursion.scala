@@ -43,19 +43,26 @@ object Recursion extends App {
     else stringConcatenator(string, n - 1, accumulator + string)
   }
 
-  println(stringConcatenator("MATKA SKULY ",50,""))
+  println(stringConcatenator("Konrad Rudnicki ",50,""))
 
   //2.
   def isPrime(n: Int): Boolean = {
     def isPrimeTailRec(m: Int, isStillPrime: Boolean): Boolean =
       if (!isStillPrime) false
       else if (m <= 1) true
-      else isPrimeTailRec(m - 1, n % m != 0 && isStillPrime)
+      else isPrimeTailRec(m - 1, n % m != 0  && isStillPrime)
 
     isPrimeTailRec(n / 2, true)
   }
 
+  println("-------------")
   println(isPrime(8))
+  println(isPrime(9))
+  println(isPrime(10))
+  println(isPrime(11))
+  println(isPrime(12))
+  println(isPrime(13))
+  println("-------------")
 
   //3.
   def fibonacciFunction(n: Int) = {
