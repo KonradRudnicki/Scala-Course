@@ -2,14 +2,15 @@ package lectures.part2oop
 
 import lectures.part2oop.Objects.Person
 
-object InheritanceAndTraits extends App {
+object Inheritance extends App {
 
-  class Animal{
+  class Animal {
     val creatureType = "wild"
+
     def eat = println("nomnom")
   }
 
-  class Cat extends Animal{
+  class Cat extends Animal {
     def crunch = {
       eat
       println("crunch crunch")
@@ -21,14 +22,15 @@ object InheritanceAndTraits extends App {
 
   //constructors
 
-  class Person(name: String, age: Int){
+  class Person(name: String, age: Int) {
     def this(name: String) = this(name, 0)
   }
-  class Adult(name:String, age: Int, iDCard: String) extends Person(name, age)
+
+  class Adult(name: String, age: Int, iDCard: String) extends Person(name, age)
 
   //overriding
   class Dog(override val creatureType: String) extends Animal {
-//    override val creatureType = "domestic"
+    //override val creatureType = "domestic"
 
     override def eat = {
       super.eat
