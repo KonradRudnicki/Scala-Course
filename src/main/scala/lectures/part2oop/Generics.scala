@@ -6,7 +6,12 @@ object Generics extends App {
 
   class MyList[+A] {
     //// use the type A
-    def add(element: A): MyList[A] = ???
+    def add[B >: A](element: B): MyList[B] = ???
+
+    /*
+          A = Cat
+          B = Animal
+         */
   }
 
   class MyMap[Key, Value]
@@ -22,7 +27,8 @@ object Generics extends App {
   val emptyListOfIntegers = MyList.empty[Int]
 
   // variance problem
-  class Animal
+  class Creature
+  class Animal extends Creature
   class Cat extends Animal
   class Dog extends Animal
 
@@ -48,7 +54,9 @@ object Generics extends App {
   val cage = new Cage(new Dog)
 
   class Car
-  val newCage = new Cage(new Car) //incorrect!
+//  val newCage = new Cage(new Car) //incorrect!
 
+
+//  expand MyList to generic
 
 }
