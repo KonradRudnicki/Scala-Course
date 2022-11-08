@@ -65,8 +65,8 @@ object Recursion extends App {
   println("-------------")
 
   //3.
-  def fibonacciFunction(n: Int) = {
-    def fibonacciTailRec(m: Int, last: Int, nextToLast: Int): Int =
+  def fibonacciFunction(n: Int): BigInt = {
+    def fibonacciTailRec(m: Int, last: Int, nextToLast: Int): BigInt =
       if (m >= n) last
       else fibonacciTailRec(m + 1, last + nextToLast, last)
 
